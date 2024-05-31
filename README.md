@@ -38,3 +38,8 @@ pip install -r requirements.txt
 - [ ] Use Streamlit to host the application
 - [ ] Finetune Llama-3 for spam email detection
 
+## License
+
+## Contact
+Korir Nancy - korjnan@gmail.com
+
