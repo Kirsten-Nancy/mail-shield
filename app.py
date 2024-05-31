@@ -2,7 +2,7 @@ from pathlib import Path
 import streamlit as st
 import joblib
 
-st.title("Spam Email Detection")
+st.columns(3)[1].header("Mail Shield")
 st.write("Please enter an email to check whether it's spam or not.")
 
 email_text = st.text_area("Email")
@@ -22,10 +22,7 @@ def run_model(email, model, vectorizer):
     email_transformed = vectorizer.transform([email])
     model_pred = model.predict(email_transformed)
 
-    if model_pred == 1:
-        return "This email is spam"
-    elif model_pred == 0:
-        return "Not a spam email"
+    return model_pred
 
 
 model_paths = {
@@ -44,4 +41,7 @@ selected_model = st.selectbox(
 if st.button(":green[Run model]"):
     model, vectorizer = load_model_and_vectorizer(model_paths[selected_model])
     prediction = run_model(email_text, model, vectorizer)
-    st.write("Prediction: ", prediction)
+    if prediction == 1:
+        st.write(":red[Spam email]")
+    elif prediction == 0:
+        st.write(":green[Not a spam email]")
