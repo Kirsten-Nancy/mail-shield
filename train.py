@@ -34,8 +34,8 @@ def train_and_save_model(model, model_name):
     y_preds = model.predict(X_test)
 
     # Save the model and the vectorizer
-    joblib.dump(vectorizer, 'vectorizer.pkl')
-    joblib.dump(model, f"{model_name}_model.pkl")
+    # joblib.dump(vectorizer, 'vectorizer.pkl')
+    # joblib.dump(model, f"{model_name}_model.pkl")
 
     # Evaluate model performance
     accuracy = accuracy_score(y_test, y_preds)
