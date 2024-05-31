@@ -34,7 +34,7 @@ pip install -r requirements.txt
 4. Click run model
 
 ## Roadmap
-- [ ] Create the simple ML Models: Linear Regression, SVM, and Random Forest
+- [x] Create the simple ML Models: Linear Regression, SVM, and Random Forest
 - [ ] Use Streamlit to host the application
 - [ ] Finetune Llama-3 for spam email detection
 
